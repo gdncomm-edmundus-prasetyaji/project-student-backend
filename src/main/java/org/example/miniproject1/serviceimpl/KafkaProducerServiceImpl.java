@@ -11,8 +11,13 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
-    public void sendAccountCreatedEvent(String message) {
-        kafkaTemplate.send("account-created-topic", message);
+    public void sendStudentAccountCreatedEvent(String message) {
+        kafkaTemplate.send("account-created-student", message);
+    }
+
+    @Override
+    public void sendLecturerAccountCreatedEvent(String message) {
+        kafkaTemplate.send("account-created-lecturer", message);
     }
 }
 
