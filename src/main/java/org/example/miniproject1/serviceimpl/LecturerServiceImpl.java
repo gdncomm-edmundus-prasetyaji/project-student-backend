@@ -20,6 +20,7 @@ public class LecturerServiceImpl implements LecturerService {
     private final KafkaProducerService kafkaProducerService;
 
     public Lecturer save(Lecturer lecturer) {
+        lecturer.setActive(true);
         Lecturer saved = lecturerRepo.save(lecturer);
         // Logs
         AuditLogs auditLogs = AuditLogs.builder()

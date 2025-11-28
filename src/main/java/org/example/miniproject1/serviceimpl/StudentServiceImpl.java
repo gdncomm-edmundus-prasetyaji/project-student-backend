@@ -21,6 +21,7 @@ public class StudentServiceImpl implements StudentService {
 
 
     public Student save(Student student) {
+        student.setActive(true);
         Student saved = studentRepo.save(student);
         // Logs
         AuditLogs auditLogs = AuditLogs.builder()
