@@ -19,5 +19,5 @@ public class Student extends User{
     @Column(nullable = false, unique = true)
     private String nim;
 
-    private String gpa;
+    private double gpa;
 }
