@@ -23,14 +23,14 @@ public class LecturerController {
         return ResponseEntity.ok(createdLecturer);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/GetById/{id}")
     @Operation(summary = "Get Lecturer Details by ID")
     public ResponseEntity<Optional<Lecturer>> findById(@PathVariable Integer id) {
         Optional<Lecturer> lecturer = lecturerService.findById(id);
         return ResponseEntity.ok(lecturer);
     }
 
-    @GetMapping("/{nip}")
+    @GetMapping("/GetByNip/{nip}")
     @Operation(summary = "Get Lecturer Details by NIP")
     public ResponseEntity<Optional<Lecturer>> findByNip(@PathVariable String nip) {
         Optional<Lecturer> lecturer = lecturerService.findByNip(nip);
